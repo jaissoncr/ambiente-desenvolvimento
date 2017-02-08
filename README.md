@@ -46,9 +46,12 @@ Esta configuração compreende somente o ambiente. É necessário que a aplicaç
 // ex: Build do ambiente
 ./develop build
 
-// Para subir as máquinas, basta rodar os seguintes comandos
+// Para subir os containers, basta rodar os seguintes comandos
 ./develop build
 ./develop up -d
+
+// Para derrubar os containers:
+./develop down
 ```
 
 # Acesso
