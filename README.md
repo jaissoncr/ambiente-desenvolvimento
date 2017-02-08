@@ -2,7 +2,7 @@
 
 Ambiente de desenvolvimento em docker contendo as seguintes configurações:
 
-- PHP 7
+- PHP 7.0.*
   - XDebug
   - Composer
 - Mailcatcher
