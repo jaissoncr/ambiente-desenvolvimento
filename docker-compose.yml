@@ -1,14 +1,14 @@
 version: '2'
 services:
-  mltools.develop:
-    container_name: mltools.develop
+  app.develop:
+    container_name: app.develop
     build:
       context: .
     image: develop
     links:
-      - mltools.db
-      - mltools.redis
-      - mltools.mail
+      - app.db
+      - app.redis
+      - app.mail
     environment:
       XDEBUG_HOST: ${XDEBUG_HOST}
     volumes:
@@ -16,29 +16,29 @@ services:
     ports:
      - "80:80"
 
-  mltools.db:
-    container_name: mltools.db
+  app.db:
+    container_name: app.db
     image: mariadb
     ports:
       - "3306:3306"
     volumes:
       - ./db/data:/var/lib/mysql
     environment:
-      MYSQL_USERNAME: mltools
-      MYSQL_ROOT_PASSWORD: mltools
-      MYSQL_PASSWORD: mltools
-      MYSQL_DATABASE: mltools
+      MYSQL_USERNAME: app
+      MYSQL_ROOT_PASSWORD: app
+      MYSQL_PASSWORD: app
+      MYSQL_DATABASE: app
 
-  mltools.redis:
-    container_name: mltools.redis
+  app.redis:
+    container_name: app.redis
     image: redis
     links:
-      - mltools.db
+      - app.db
     ports:
       - 6379:6379
 
-  mltools.mail:
-    container_name: mltools.mail
+  app.mail:
+    container_name: app.mail
     image: schickling/mailcatcher
     ports:
       - 1080:1080
