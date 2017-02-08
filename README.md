@@ -9,6 +9,10 @@ Ambiente de desenvolvimento em docker contendo as seguintes configurações:
 - Redis
 - MariaDB
 
+# Requisitos
+
+- Docker instalado https://www.docker.com/products/docker
+
 # Configuração
 
 Adicionar os seguintes endereços ao arquivo `/etc/hosts`:
