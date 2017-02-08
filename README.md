@@ -18,10 +18,10 @@ Ambiente de desenvolvimento em docker contendo as seguintes configurações:
 Adicionar os seguintes endereços ao arquivo `/etc/hosts`:
 
 ```
-127.0.0.1   mltools.develop
-127.0.0.1   mltools.db
-127.0.0.1   mltools.redis
-127.0.0.1   mltools.mail
+127.0.0.1   app.develop
+127.0.0.1   app.db
+127.0.0.1   app.redis
+127.0.0.1   app.mail
 ```
 
 Configuração de IP dinâmico feita para MacOS, vide arquivo develop. Trocar pelo IP do host ou pelo comando que retorna o mesmo.
@@ -47,4 +47,4 @@ Esta configuração compreende somente o ambiente. É necessário que a aplicaç
 
 # Acesso
 
-Depois de subir os containers e configurar o arquivo de hosts basta acessar o endereço da aplicação. Seguindo este exemplo, o endereço seria `http://mltools.develop/`.
+Depois de subir os containers e configurar o arquivo de hosts basta acessar o endereço da aplicação. Seguindo este exemplo, o endereço seria `http://app.develop/`.
