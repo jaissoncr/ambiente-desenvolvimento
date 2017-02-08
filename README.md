@@ -24,6 +24,8 @@ Configuração de IP dinâmico feita para MacOS, vide arquivo develop. Trocar pe
 
 O ambiente esta configurado para mapear a aplicação contida no diretorio backend para `/var/www` e está o server php está direcionado para o diretório `/var/www/public`.
 
+Esta configuração compreende somente o ambiente. É necessário que a aplicação seja configurada conforme necessário.
+
 # Run
 
 ```
