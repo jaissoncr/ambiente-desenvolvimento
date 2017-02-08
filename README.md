@@ -24,6 +24,12 @@ Adicionar os seguintes endereços ao arquivo `/etc/hosts`:
 127.0.0.1   app.mail
 ```
 
+Dar permissão de execução para o arquivo `./develop`:
+
+```
+sudo chmod +x develop
+```
+
 Configuração de IP dinâmico feita para MacOS, vide arquivo develop. Trocar pelo IP do host ou pelo comando que retorna o mesmo.
 
 O ambiente esta configurado para mapear a aplicação contida no diretorio backend para `/var/www` e está o server php está direcionado para o diretório `/var/www/public`.
