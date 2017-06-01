@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "buyer": {
+            "alternative_phone": {
+                "area_code": null,
+                "extension": null,
+                "number": ""
+            },
+            "billing_info": {
+                "doc_number": "67045427794",
+                "doc_type": "CPF"
+            },
+            "email": "email@testuser.com",
+            "first_name": "Maria",
+            "id": 160903317,
+            "last_name": "Nascimento",
+            "nickname": "TETE2022123",
+            "phone": {
+                "area_code": "01",
+                "extension": null,
+                "number": "1111-1111"
+            }
+        }
+        
+    },
+    {
+        "id": 2,
+        "buyer": {
+            "alternative_phone": {
+                "area_code": null,
+                "extension": null,
+                "number": ""
+            },
+            "billing_info": {
+                "doc_number": "670454252593",
+                "doc_type": "CPF"
+            },
+            "email": "joao@hotmail.com",
+            "first_name": "João",
+            "id": 160533313,
+            "last_name": "Rodrigues",
+            "nickname": "JOAOTESTE",
+            "phone": {
+                "area_code": "48",
+                "extension": null,
+                "number": "9946-5592"
+            }
+        },
+        "shipping": {
+            "id": 20676482441,
+            "shipment_type": "shipping",
+            "status": "handling",
+            "date_created": "2013-05-27T10:03:28.000-04:00",
+            "receiver_address": {
+                "id": 12345678,
+                "address_line": "Rua dos testes 123  ",
+                "zip_code": "01001000",
+                "city": {
+                    "id": "BR-SP-44",
+                    "name": "São Paulo"
+                },
+                "state": {
+                    "id": "BR-SP",
+                    "name": "São Paulo"
+                },
+                "country":{
+                    "id": "BR",
+                    "name": "Brasil"
+                }
+            }
+        }
+        
+    } 
+]

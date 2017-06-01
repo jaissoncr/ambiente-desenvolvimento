@@ -1,0 +1,80 @@
+[
+    {
+        "title": "Compra no MercadoLivre - $nomeProduto $codigoProduto",
+        "message": "Mensagem teste",
+        "feedback": {
+            "purchase": "",
+            "sale": ""
+        },
+        "status": "paid",
+        "tags": [
+        "paid",
+        "delivered"
+      ]
+    },
+    {
+        "title": "Ainda não recebemos o pagamento da sua compra - $nomeProduto",
+        "message": "",
+        "feedback": {
+            "purchase": "",
+            "sale": ""
+        },
+        "status": "cancelled",
+        "tags": [
+        "paid",
+        "delivered"
+      ]
+    },
+    {
+        "title": "Enviamos o seu produto - $nomeProduto",
+        "message": "",
+        "feedback": {
+            "purchase": "",
+            "sale": ""
+        },
+        "status": "cancelled",
+        "tags": [
+        "paid",
+        "delivered"
+      ]
+    },
+    {
+        "title": "O seu produto está aguardando retirada nos Correios",
+        "message": "",
+        "feedback": {
+            "purchase": "",
+            "sale": ""
+        },
+        "status": "cancelled",
+        "tags": [
+        "paid",
+        "delivered"
+      ]
+    },
+    {
+        "title": "Você pode nos qualificar pela compra do produto - $nomeProduto",
+        "message": "",
+        "feedback": {
+            "purchase": "",
+            "sale": ""
+        },
+        "status": "cancelled",
+        "tags": [
+        "paid",
+        "delivered"
+      ]
+    },
+    {
+        "title": "Você poderia efetuar a troca da qualificação?",
+        "message": "",
+        "feedback": {
+            "purchase": "",
+            "sale": ""
+        },
+        "status": "cancelled",
+        "tags": [
+        "paid",
+        "delivered"
+      ]
+    }
+]

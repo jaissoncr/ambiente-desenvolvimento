@@ -1,0 +1,101 @@
+<div class="page">
+	<section class="panel panel-default table-dynamic">
+		<div class="panel-heading"><strong><span class="fa fa-shopping-basket"></span> Anúncios</strong></div>
+        <div class="panel-body">
+			<div class="table-filters">
+	            <div class="row">
+	                <div class="col-sm-4 col-xs-6">
+	                    <form>
+	                        <input type="text"
+	                               placeholder="Busca"
+	                               class="form-control"
+	                               data-ng-model="searchKeywords"
+	                               data-ng-keyup="search()">
+	                    </form>
+	                </div>
+	                <div class="col-sm-3 col-xs-6 filter-result-info">
+	                    <span>
+	                        Mostrando {{filteredRows.length}}/{{anuncios.length}} resultados
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+
+            <table class="table table-bordered table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="th">
+                                Título
+                                <span class="glyphicon glyphicon-chevron-up"
+                                    data-ng-click=" order('title') "
+                                    data-ng-class="{active: row == 'title'}"></span>
+                                <span class="glyphicon glyphicon-chevron-down"
+                                    data-ng-click=" order('-title') "
+                                    data-ng-class="{active: row == '-title'}"></span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th">
+                                Preço
+                                <span class="glyphicon glyphicon-chevron-up"
+                                    data-ng-click=" order('price') "
+                                    data-ng-class="{active: row == 'price'}"></span>
+                                <span class="glyphicon glyphicon-chevron-down"
+                                    data-ng-click=" order('-price') "
+                                    data-ng-class="{active: row == '-price'}"></span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+					<tr data-ng-repeat="anuncio in currentPageRows">
+                        <td>
+                            {{ anuncio.title }}
+                            <br><small>{{ anuncio.subtitle }}</small>
+                        </td>
+                        <td>
+                            {{ anuncio.price | currency:'R$ ':2 }}
+                        </td>
+					</tr>
+					<tr ng-if="!currentPageRows.length"><td colspan="3">Nenhum anúncio encontrado</td></tr>
+                </tbody>
+            </table>
+
+			<footer class="table-footer">
+	            <div class="row">
+	                <div class="col-md-6 page-num-info">
+						<form action="javascript:return;" class="form-inline">
+							<div class="form-group">Mostrar</div>
+							<div class="form-group">
+								<select class="form-control"
+										data-ng-model="numPerPage"
+		                                data-ng-options="num for num in numPerPageOpt"
+		                                data-ng-change="onNumPerPageChange()">
+		                        </select>
+							</div>
+							<div class="form-group">
+								resultados por página
+							</div>
+						</form>
+	                </div>
+	                <div class="col-md-6 text-right pagination-container">
+	                    <pagination class="pagination-sm"
+	                                ng-model="currentPage"
+	                                total-items="filteredRows.length"
+	                                max-size="4"
+	                                ng-change="select(currentPage)"
+	                                items-per-page="numPerPage"
+	                                rotate="false"
+	                                first-text="Primeira Página"
+	                                last-text="Última Página"
+									previous-text="Anterior"
+	                                next-text="Próxima"
+	                                boundary-links="true"></pagination>
+	                </div>
+	            </div>
+	        </footer>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 3957150025,
+    "answer": {
+    "date_created": "2016-02-29T11:21:27.000-04:00",
+    "status": "ACTIVE",
+    "text": ""
+  },
+    "date_created": "2016-02-29T11:19:42.000-04:00",
+    "deleted_from_listing": false,
+    "hold": false,
+    "item_id": "MLA608007087",
+    "title": "Mochila Dakine - Street Campus Sm 25l - Palm + Nf",
+    "price": "109,90",
+    "url":"http://produto.mercadolivre.com.br/MLB-740358352-mochila-dakine-street-capitol-23l-palmint-_JM",
+    "available_quantity": "2",
+    "seller_id": 202593498,
+    "nickname": "JCR STORE",
+    "status": "UNANSWERED",
+    "text": "Produto a pronta-entrega? Aceita MercadoPago?",
+    "from": {
+      "id": 207119838,
+      "answered_questions": 1
+    }
+  },
+  {
+    "id": 3957150027,
+    "answer": {
+    "date_created": "2016-02-29T11:21:27.000-04:00",
+    "status": "ACTIVE",
+    "text": ""
+  },
+    "date_created": "2016-02-29T11:19:48.000-04:00",
+    "deleted_from_listing": false,
+    "hold": false,
+    "item_id": "MLA608007087",
+    "title": "Relógio Alemão Königswerk - Licinius C/ Couro Novo",
+    "price": "168,90",
+    "url": "http://produto.mercadolivre.com.br/MLB-775015994-bota-de-neoprene-surf-silverbay-cano-longo-4142-_JM",
+    "available_quantity": "3",
+    "seller_id": 202593498,
+    "nickname": "nickname",
+    "status": "UNANSWERED",
+    "text": "Possui na cor preto?",
+    "from": {
+      "id": 207119838,
+      "answered_questions": 1
+    }
+  }
+]

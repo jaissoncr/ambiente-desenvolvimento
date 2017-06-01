@@ -1,2 +1,5 @@
-*
-!.gitignore
+/node_modules
+/.sass-cache
+/.tmp
+/client/vendor
+.DS_Store

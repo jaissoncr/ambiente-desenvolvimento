@@ -1,0 +1,50 @@
+<div class="nav-wrapper">
+    <ul id="nav"
+        class="nav"
+        data-ng-controller="NavCtrl"
+        data-slim-scroll
+        data-collapse-nav
+        data-highlight-active>
+        <li><a href="#/dashboard"> <i class="fa fa-dashboard"></i><span data-translate="Visão geral"></span> </a></li>
+        <li>
+            <a href="#/clientes"><i class="glyphicon glyphicon-user"></i><span data-translate="Clientes"></span></a>
+        </li>
+        <li>
+            <a href="#/produtos"><i class="fa fa-tags"></i><span data-translate="Produtos"></span></a>
+        </li>
+        <!--<li>-->
+        <!--    <a href="#/anuncios"><i class="fa fa-shopping-basket"></i><span data-translate="Anúncios"></span></a>-->
+        <!--</li>-->
+        <li>
+            <a href="#/vendas"><i class="fa fa-shopping-cart"></i><span data-translate="Vendas"></span></a>
+        </li>
+        <!-- <li>
+            <a href="#/movimentacoes-estoque"><i class="fa fa-barcode"></i><span data-translate="Movimentação de Estoque"></span></a>
+        </li> -->
+         <li>
+            <a href="#/perguntas"><i class="glyphicon glyphicon-question-sign"></i><span data-translate="Perguntas"></span></a>
+        </li>
+        <li>
+            <a href="#/bloqueio-usuarios"><i class="fa fa-user-times"></i><span data-translate="Bloqueio de Usuários"></span></a>
+        </li>
+        <li>
+            <a href="#/emails"><i class="fa fa-envelope"></i><span data-translate="E-mails Automáticos"></span></a>
+        </li>
+         <li>
+            <a href="#/qualificacoes"><i class="fa fa-star"></i><span data-translate="Qualificações Automáticas"></span></a>
+        </li>
+        <li class="nav-task">
+            <a href="#/tarefas">
+                <i class="glyphicon glyphicon-tasks"></i><span data-translate="Tarefas"></span>
+                <span class="badge badge-danger main-badge" data-ng-show="taskRemainingCount > 0">{{taskRemainingCount}}</span>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="#/ui/pricing-tables"><i class="fa fa-certificate"></i><span data-translate="Planos"></span></a>
+        </li> -->
+        <!-- <li>
+            <a href="#/ajuda">
+                <i class="fa fa-warning"></i><span data-translate="Ajuda"></span></a>
+        </li> -->
+    </ul>
+</div>

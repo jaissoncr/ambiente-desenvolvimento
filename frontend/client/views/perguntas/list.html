@@ -1,0 +1,96 @@
+<div class="page page-perguntas">
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-question-sign"></span> Perguntas</strong></div>
+                <div class="panel-body" data-ng-repeat="pergunta in perguntas">
+                    <div class="media" id="panelPerguntas">
+                        <img alt="" src="images/street-campus.jpg" class="img-square img80_80 pull-left">
+                        <div class="media-body">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="icon glyphicon glyphicon-link"></span>
+                                    <label><a href="{{pergunta.url}}" target="_blank"> {{pergunta.title}}</a></label>
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-user"></span>
+                                    <label><a href="http://perfil.mercadolivre.com.br/{{ pergunta.nickname }}" target="_blank"> {{pergunta.nickname}}</a></label>
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-time"></span>
+                                    <label> Pergunta realizada em {{ pergunta.date_created | date: "dd/MM/yy, hh:mm" }} h. </label>
+                                    
+                                </li>
+                                <li>
+                                    <label> R$ {{ pergunta.price }} | Quantidade disponível: {{ pergunta.available_quantity }} un.</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <form class="form_constraints">
+                            <div class="form-group">
+                                <div class=row>
+                                    <div class="col-sm-9">
+                                        <p><span class="glyphicon glyphicon-comment"></span> {{ pergunta.text }}</p>
+                                        <button class="btn btn-danger" id="deleteButton" data-ng-click="remove(pergunta, $index)">
+                                                <span class="glyphicon glyphicon-trash"></span> 
+                                        {{buttonDeleteAnswer}}</button>
+                                        <button type="submit"
+                                                class="btn btn-primary" 
+                                                id="answerButton" 
+                                                data-ng-click="send(pergunta, $index)" 
+                                                data-ng-disabled="!pergunta.answer.text || sendingAnswer">
+                                        <span class="glyphicon glyphicon-ok"></span> 
+                                        {{buttonSendAnswer}}
+                                        </button>
+                                        <input type="text" id="answer" name="answer" class="form-control" 
+                                        data-ng-model="pergunta.answer.text" placeholder="Insira sua resposta aqui. Se preferir, utilize as etiquetas do lado com apenas um click.">
+                                    </div>
+                                </div>
+                            </div>  
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+            </section> 
+        </div>
+         <div class="col-md-3">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-tag"></span> Etiquetas</strong></div>
+                <div class="panel-body text-center">
+                    <p></p>
+                    <div ng-if="etiquetas === undefined">
+                        <span class="fa fa-spin fa-spinner"></span> Carregando etiquetas...
+                    </div>
+                    <div ng-if="etiquetas !== undefined" ng-repeat="etiqueta in etiquetas">
+                        <a href="" class="btn btn-w-md btn-default" data-ng-click="get(etiqueta)" >{{etiqueta.nome}}</a>
+                    </div>
+                    <div class="callout callout-warning text-left">
+                        <h4>Por que usar as etiquetas?</h4>
+                        <p>Com as etiquetas você pode responder suas perguntas de forma mais rápida e eficiente, padronizando as respostas mais utilizadas e acionando-as em um click.</p>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <button class="btn btn-default">
+                        <span class="glyphicon glyphicon-edit"></span>
+                        <a href="#/etiquetas">Configurar Etiquetas</a>
+                    </button>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-pencil"></span> Assinaturas</strong></div>
+                <div class="panel-body text-center">
+                    <div class="callout callout-warning text-left">
+                        <h4>Para que servem as assinaturas?</h4>
+                        <p>Com as assinaturas você consegue padronizar o início e o final de todas as suas respostas.</p>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <button class="btn btn-default">
+                        <span class="glyphicon glyphicon-edit"></span>
+                        <a href="#/assinaturas">Configurar Assinaturas</a>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

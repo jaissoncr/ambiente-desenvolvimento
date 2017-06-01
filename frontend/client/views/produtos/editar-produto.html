@@ -1,0 +1,81 @@
+<div class="page page-produtos">
+    <section class="panel panel-warning">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-edit"></span> Editar Produto</strong></div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-6">
+                    	<h4><span class="glyphicon glyphicon-tag"></span> Dados do Produto</h4>
+                		<hr>
+                    	<div class="col-md-12 col-sm-6 col-xs-12">
+		                    <label for="produtoNome">Título do Produto</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.title" id="produtoNome" placeholder="Digite o título do produto">
+	                    </div>
+	                    <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="codigoSku">Código (SKU)</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.sku" id="codigoSku" placeholder="Código do produto">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="codigoBarras">Código de Barras (EAN)</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.codigoBarras" id="codigoBarras" placeholder="Código de barras">
+		                </div>
+                    </div>
+                    <div class="col-md-6">
+                    	<h4><span class="fa fa-barcode"></span> Estoque</h3>
+        				<hr>
+                    	<div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="valorCusto">Valor de Custo</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.valorCusto" id="valorCusto" placeholder="R$ 0,00">
+		                </div>
+                    	<div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="valorVenda">Valor de Venda Estimado</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.price" id="valorVenda" placeholder="R$ 0,00">
+		                </div>
+		                <div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="qtdDisponivel">Quantidade Disponível</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.available_quantity" id="qtdDisponivel" placeholder="0">
+		                </div>
+		                <div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="qtdMinima">Quantidade Mínima</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.qtdMin" id="qtdMinima" placeholder="0">
+		                </div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="altura">Altura (cm)</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.altura" id="altura" placeholder="0">
+		                </div>
+		                <div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="largura">Largura (cm)</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.largura" id="largura" placeholder="0">
+		                </div>
+		                <div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="comprimento">Comprimento (cm)</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.comprimento" id="comprimento" placeholder="0">
+		                </div>
+		                <div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="peso">Peso (g)</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.peso" id="peso" placeholder="0">
+		                </div>
+                    </div>
+                    <div class="col-md-12">
+                    	<hr>
+                    	<div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="idMercadoLivre">ID do Produto no MercadoLivre</label>
+		                    <input type="text" class="form-control" data-ng-model="produto.id" id="idMercadoLivre" placeholder="#000000000">
+		                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+            	<div class="btnProdutos">
+		            <button class="btn btn-default btn-w-md"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/produtos"> Voltar</a></button>
+		            <button class="btn btn-primary btn-w-md"
+	            			data-ng-click="add(produto)"
+	            			data-ng-disabled="!produto.title || !produto.valorCusto || !produto.price || !produto.available_quantity">
+	            		<span class="glyphicon glyphicon-saved"></span> 
+		            	Salvar
+		            </button>
+	            </div>
+            </div>
+        </div>
+    </section> 
+
+</div>

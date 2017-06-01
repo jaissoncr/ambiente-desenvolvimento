@@ -1,0 +1,69 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "repositories": [
+        {"type": "vcs", "url": "https://github.com/rafaelign/socialite.git"}
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*",
+        "rafaelign/socialite": "dev-master",
+        "doctrine/dbal": "^2.6@dev",
+        "barryvdh/laravel-cors": "0.7.x",
+        "predis/predis": "~1.0.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "league/factory-muffin": "~2.0",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "*",
+        "phpspec/phpspec": "~2.1",
+        "phing/phing": "*",
+        "pdepend/pdepend": "*",
+        "sebastian/phpcpd": "*",
+        "squizlabs/php_codesniffer": "*",
+        "phpmd/phpmd": "*",
+        "phpdocumentor/phpdocumentor": "*",
+        "phploc/phploc": "*",
+        "way/laravel-test-helpers": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "MLTools\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/helpers/",
+            "tests/TestCase.php",
+            "tests/TestCaseController.php"
+        ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize"
+        ],
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": false
+}

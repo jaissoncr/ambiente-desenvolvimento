@@ -1,0 +1,128 @@
+<div class="page">
+
+	<section class="panel panel-primary">
+		<div class="panel-heading">
+			<strong><span class="fa fa-user-plus"></span> Adicionar Usuários</strong>
+		</div>
+        <div class="panel-body">
+			<div class="row">
+				<div class="col-sm-6 col-xs-8">
+					<label class="sr-only" for="store_id">Código do Usuário (Mercado Livre)</label>
+					<input type="text" data-ng-model="novoUsuario.store_id" class="form-control col-sm-6 col-xs-8" id="store_id" placeholder="Código do Usuário (Mercado Livre)">
+				</div>
+				<div class="col-sm-6 col-xs-8">
+					<button class="btn btn-primary" type="button" data-ng-click="addUser(novoUsuario)" data-ng-disabled="!novoUsuario.store_id || savingUser">{{buttonAddUser}}</button>
+					<div class="pull-right" ng-controller="ModalAjudaBloqueioCtrl">
+						<button class="btn btn-warning" type="button" ng-click="open('lg')">
+							<span class="fa fa-question"></span>
+							Como encontrar o ID do usuário
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="panel panel-default table-dynamic">
+		<div class="panel-heading"><strong><span class="fa fa-users"></span> Usuários</strong><span class="fa fa-spinner fa-pulse pull-right" ng-show="savingUser"></span></div>
+        <div class="panel-body">
+			<div class="table-filters">
+	            <div class="row">
+	                <div class="col-sm-4 col-xs-6">
+	                    <form>
+	                        <input type="text"
+	                               placeholder="Busca"
+	                               class="form-control"
+	                               data-ng-model="searchKeywords"
+	                               data-ng-keyup="search()">
+	                    </form>
+	                </div>
+	                <div class="col-sm-3 col-xs-6 filter-result-info">
+	                    <span>
+	                        Mostrando {{filteredRows.length}}/{{usuarios.length}} resultados
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+
+            <table class="table table-bordered table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th><div class="th">
+							Apelido
+							<span class="glyphicon glyphicon-chevron-up"
+	                              data-ng-click=" order('nickname') "
+	                              data-ng-class="{active: row == 'nickname'}"></span>
+	                        <span class="glyphicon glyphicon-chevron-down"
+	                              data-ng-click=" order('-nickname') "
+	                              data-ng-class="{active: row == '-nickname'}"></span>
+						</div></th>
+                        <th><div class="th">
+							ID do Usuário
+							<span class="glyphicon glyphicon-chevron-up"
+								  data-ng-click=" order('store_id') "
+								  data-ng-class="{active: row == 'store_id'}"></span>
+							<span class="glyphicon glyphicon-chevron-down"
+								  data-ng-click=" order('-store_id') "
+								  data-ng-class="{active: row == '-store_id'}"></span>
+						</div></th>
+                        <th><div class="th">
+							Bloqueado?
+							<span class="glyphicon glyphicon-chevron-up"
+								  data-ng-click=" order('pivot.status') "
+								  data-ng-class="{active: row == 'pivot.status'}"></span>
+							<span class="glyphicon glyphicon-chevron-down"
+								  data-ng-click=" order('-pivot.status') "
+								  data-ng-class="{active: row == '-pivot.status'}"></span>
+						</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+					<tr data-ng-repeat="usuario in currentPageRows">
+						<td>{{usuario.nickname}}</td>
+						<td>{{usuario.store_id}}</td>
+						<td>
+							<ui-block-user></ui-block-user>
+						</td>
+					</tr>
+					<tr ng-if="!currentPageRows.length"><td colspan="3">Nenhum usuário encontrado</td></tr>
+                </tbody>
+            </table>
+
+			<footer class="table-footer">
+	            <div class="row">
+	                <div class="col-md-6 page-num-info">
+						<form action="javascript:return;" class="form-inline">
+							<div class="form-group">Mostrar</div>
+							<div class="form-group">
+								<select class="form-control"
+										data-ng-model="numPerPage"
+		                                data-ng-options="num for num in numPerPageOpt"
+		                                data-ng-change="onNumPerPageChange()">
+		                        </select>
+							</div>
+							<div class="form-group">
+								resultados por página
+							</div>
+						</form>
+	                </div>
+	                <div class="col-md-6 text-right pagination-container">
+	                    <pagination class="pagination-sm"
+	                                ng-model="currentPage"
+	                                total-items="filteredRows.length"
+	                                max-size="4"
+	                                ng-change="select(currentPage)"
+	                                items-per-page="numPerPage"
+	                                rotate="false"
+	                                first-text="Primeira Página"
+	                                last-text="Última Página"
+									previous-text="Anterior"
+	                                next-text="Próxima"
+	                                boundary-links="true"></pagination>
+	                </div>
+	            </div>
+	        </footer>
+        </div>
+    </section>
+
+</div>

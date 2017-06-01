@@ -1,0 +1,72 @@
+<div class="page page-qualificacao">
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel panel-primary">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-plus"></span> Criar Nova Regra</strong></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label for="pagamento" class="text-left">Pagamento</label>
+                                <span class="ui-select">
+                                    <select ng-data-model="qualificacao.feedback">
+                                        <option>Recebido</option>
+                                        <option>Devolvido</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label for="" class="text-left">Entrega</label>
+                                <span class="ui-select">
+                                    <select>
+                                        <option>Em trânsito</option>
+                                        <option>Entregue</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label for="" class="text-left">Qualificação</label>
+                                <span class="ui-select">
+                                    <select>
+                                        <option>Positivo</option>
+                                        <option>Neutro</option>
+                                        <option>Negativo</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <label for="" class="text-left">Qualificar em até</label>
+                                <span class="ui-select">
+                                    <select>
+                                        <option>Em até 24 horas</option>
+                                        <option>2 dias</option>
+                                        <option>3 dias</option>
+                                        <option>4 dias</option>
+                                        <option>5 dias</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-6 col-xs-12">
+                                    <label for="" class="text-left">Comentário</label>
+                                    <input type="text" id="comentatio" name="comentatio" class="form-control" placeholder="Insira sua qualificação.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="form-group">
+                        <button class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/qualificacoes">Voltar</a> </button>
+                        <button class="btn btn-primary"><span class="glyphicon glyphicon-saved"></span> Salvar Qualificação</button>
+                    </div>
+                    <div class="callout callout-warning text-left">
+                        <h4>Por que criar regras de qualificações?</h4>
+                        <p>Com a regra de qualificação você qualifica automaticamente seus compradores. Basta escolher os critérios, o comentário e pronto! Você nunca mais vai perder tempo com isto!</p>
+                    </div>
+                </div>
+            </section> 
+        </div>
+    </div>
+</div>
+

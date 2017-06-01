@@ -1,0 +1,260 @@
+<div class="page page-dashboard">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="fa fa-pie-chart"></span> Resumo
+                </div>
+                <div class="panel-body">
+                    <!-- stats -->
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="dateGraphs">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="input-group ui-datepicker">
+                                        <input type="text" 
+                                               class="form-control"
+                                               uib-datepicker-popup="{{format}}"
+                                               data-ng-model="venda.date_created"
+                                               is-open="opened"
+                                               min="minDate"
+                                               max="'2015-06-22'"
+                                               datepicker-options="dateOptions" 
+                                               date-disabled="disabled(date, mode)"
+                                               ng-required="true" 
+                                               close-text="Close"
+                                               placeholder="De">
+                                        <span class="input-group-addon" ng-click="open($event)"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                            </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="input-group ui-datepicker">
+                                        <input type="text" 
+                                               class="form-control"
+                                               uib-datepicker-popup="{{format}}"
+                                               data-ng-model="venda.date_created"
+                                               is-open="opened"
+                                               min="minDate"
+                                               max="'2015-06-22'"
+                                               datepicker-options="dateOptions" 
+                                               date-disabled="disabled(date, mode)"
+                                               ng-required="true" 
+                                               close-text="Close"
+                                               placeholder="Até">
+                                        <span class="input-group-addon" ng-click="open($event)"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                            </div>
+                                <div class="col-sm-3">
+                                    <span class="ui-select">
+                                        <select>
+                                            <option>Última Semana</option>
+                                            <option>Últimas 2 Semanas</option>
+                                            <option>Último Mês</option>
+                                            <option>Últimos 3 Meses</option>
+                                        </select>
+                                    </span>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="btnCharts">
+                            <div class="row">
+                                <p><div class="col-xs-12">
+                                <button class="btn btn-info btn-w-md">
+                        		<span class="fa fa-users"></span> 
+                            	Clientes
+                                </button>
+                        </div></p>
+                                <p><div class="col-xs-12">
+                                <button class="btn btn-success btn-w-md">
+                        		<span class="fa fa-shopping-cart"></span> 
+                            	Vendas
+                                </button>
+                        </div></p>
+                                <p><div class="col-xs-12">
+                                <button class="btn btn-warning btn-w-md">
+                        		<span class="fa fa-dollar"></span> 
+                            	Faturamento
+                                </button>
+                        </div></p>
+                                <p><div class="col-xs-12">
+                                <button class="btn btn-danger btn-w-md">
+                        		<span class="glyphicon glyphicon-eye-open"></span> 
+                            	Visitas
+                                </button>
+                        </div></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel mini-box">
+                                    <span class="box-icon rounded bg-info">
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <div class="box-info">
+                                        <p class="size-h2">52</p>
+                                        <p class="text-muted"><span data-i18n="New users">Novos Clientes</span></p>
+                                        <p class="text-muted"><h5>Hoje: <b>9</b></h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel mini-box">
+                                    <span class="box-icon rounded bg-success">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </span>
+                                    <div class="box-info">
+                                        <p class="size-h2">56</p>
+                                        <p class="text-muted"><span data-i18n="Sales">Vendas</span></p>
+                                        <p class="text-muted"><h5>Hoje: <b>9</b></h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel mini-box">
+                                    <span class="box-icon rounded bg-warning">
+                                        <i class="fa fa-dollar"></i>
+                                    </span>
+                                    <div class="box-info">
+                                        <p class="size-h2">R$ 5.742,00</p>
+                                        <p class="text-muted"><span data-i18n="Profit">Faturamento</span></p>
+                                        <p class="text-muted"><h5>Hoje: <b>R$ 794,42</b></h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel mini-box">
+                                    <span class="box-icon rounded bg-danger">
+                                        <i class="glyphicon glyphicon-eye-open"></i>
+                                    </span>
+                                    <div class="box-info">
+                                        <p class="size-h2">1357</p>
+                                        <p class="text-muted"><span data-i18n="Growth">Visitas</span></p>
+                                        <p class="text-muted"><h5>Hoje: <b>187</b></h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <h4>Vendas - Última Semana</h4>
+                        </div>
+                        <div class="row">
+                            <div morris-chart
+                                 data-data="simple2.data"
+                                 data-type="simple2.type"
+                                 data-options="simple2.options">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end stats -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="fa fa-pie-chart"></span> Usuários Bloqueados
+                </div>
+                <div class="panel-body">
+                    <div data-flot-chart
+                         data-data="usuariosBloqueadosChart.data"
+                         data-options="usuariosBloqueadosChart.options"
+                         style="width: 100%; height: 230px;"
+                         ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Area Chart</strong></div>
+        <div class="panel-body" data-ng-controller="flotChartCtrl">
+            <div data-flot-chart
+                 data-data="line1.data"
+                 data-options="line1.options"
+                 style="width: 100%; height: 300px;"
+                 ></div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Table - General</strong></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Project</th>
+                    <th>Status</th>
+                    <th>Manager</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><span class="color-success"><i class="fa fa-level-up"></i></span> TWLT</td>
+                    <td><span class="label label-info">Pending</span></td>
+                    <td>Amery Lee</td>
+                    <td><progressbar class="progressbar-xs no-margin" value="55"></progressbar>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><span class="color-success"><i class="fa fa-level-up"></i></span> A16Z</td>
+                    <td><span class="label label-primary">Due</span></td>
+                    <td>Romayne Carlyn</td>
+                    <td><progressbar class="progressbar-xs no-margin" value="34" type="success"></progressbar></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><span class="color-warning"><i class="fa fa-level-down"></i></span> DARK</td>
+                    <td><span class="label label-success">Due</span></td>
+                    <td>Marybeth Joanna</td>
+                    <td><progressbar class="progressbar-xs no-margin" value="68" type="info"></progressbar></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><span class="color-info"><i class="fa fa-level-up"></i></span> Q300</td>
+                    <td><span class="label label-danger">Blocked</span></td>
+                    <td>Jonah Benny</td>
+                    <td><progressbar class="progressbar-xs no-margin" value="52" type="warning"></progressbar></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><span class="color-danger"><i class="fa fa-level-down"></i></span> RVNG</td>
+                    <td><span class="label label-warning">Suspended</span></td>
+                    <td>Daly Royle</td>
+                    <td><progressbar class="progressbar-xs no-margin" value="77" type="danger"></progressbar></td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><span class="color-info"><i class="fa fa-level-down"></i></span> FDSA</td>
+                    <td><span class="label label-info">Suspended</span></td>
+                    <td>Jane Swift</td>
+                    <td><progressbar class="progressbar-xs no-margin" value="55" type="success"></progressbar></td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+
+<!--     <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Line and Area Chart</h3>
+        </div>
+        <div class="panel-body" data-ng-controller="morrisChartCtrl">
+            <div morris-chart
+                 data-data="combo1.data"
+                 data-type="combo1.type"
+                 data-options="combo1.options"
+                 ></div>
+        </div>
+    </div> -->
+
+</div>

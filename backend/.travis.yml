@@ -1,0 +1,15 @@
+language: php
+
+env:
+    - RUN=vendor/bin/phpunit
+
+script: ${RUN}
+
+php:
+    - 5.6
+    - 7.0
+
+before_script:
+    - "composer selfupdate"
+    - "composer --version"
+    - "composer install --prefer-dist --verbose"

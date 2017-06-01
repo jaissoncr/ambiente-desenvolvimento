@@ -1,0 +1,164 @@
+<div class="page page-vendas">
+    <section class="panel panel-primary">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-plus"></span> Adicionar Venda</strong></div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <h4><span class="glyphicon glyphicon-shopping-cart"></span> Informações da Venda</h4>
+                	<hr>
+                	{{ venda }}
+                    <div class="row">
+                        <div class="col-sm-4">
+		                    <label for="cliente">Cliente</label>
+		                    <input type="text" class="form-control" data-ng-model="venda.buyer" id="cliente" placeholder="Prcurar cliente ou adicionar novo cliente">
+	                    </div>
+	                    <div class="col-md-2 col-sm-4 col-xs-12">
+		                    <label for="data">Data</label>
+                            <div class="input-group ui-datepicker">
+                                <input type="text" 
+                                       class="form-control"
+                                       uib-datepicker-popup="{{format}}"
+                                       data-ng-model="venda.date_created"
+                                       is-open="opened"
+                                       min="minDate"
+                                       max="'2015-06-22'"
+                                       datepicker-options="dateOptions" 
+                                       date-disabled="disabled(date, mode)"
+                                       ng-required="true" 
+                                       close-text="Close">
+                                <span class="input-group-addon" ng-click="open($event)"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-sm-4">
+		                    <label for="produto">Produto</label>
+		                    <input type="text" class="form-control" data-ng-model="venda.order_items.item.title"  id="produto" placeholder="Digite um produto">
+		                </div>
+                        <div class="col-sm-2">
+		                    <label for="quantidade">Quantidade</label>
+		                    <input type="text" class="form-control" data-ng-model="venda.order_items.item.quantity" id="quantidade" placeholder="0">
+		                </div>
+		                <div class="col-sm-2">
+		                    <label for="custo">Custo Unitário</label>
+		                    <input type="text" class="form-control" data-ng-model="venda.valorCusto" id="custo" placeholder="R$ 0,00">
+		                </div>
+		                <div class="col-sm-2">
+		                    <label for="valorUnitario">Valor Unitário</label>
+		                    <input type="text" class="form-control" data-ng-model="venda.price" id="valorUnitario" placeholder="R$ 0,00">
+		                </div>
+		                <div class="col-sm-2">
+		                    <label for="valorTotal">Valor Total</label>
+		                    <input type="text" class="form-control"  id="valorTotal" disabled value="{{ venda.order_items.item.quantity * venda.price | currency:'R$ ':2}}" placeholder="R$ 0,00">
+		                </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <button type="button" 
+                                class="btn btn-w-md btn-gap-v btn-info"
+                                data-ng-click="">
+                            Adicionar mais uma linha
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 pull-right">
+                            <div class="well well-lg" id='wellVenda'>
+                                <div class="row">
+                                    <label for="valorProdutos" class="col-sm-6">Valor dos Produtos</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" disabled value="R$ 0,00">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="desconto" class="col-sm-3">Desconto</label>
+                                    <span class="ui-select">
+                                        <select>
+                                            <option>%</option>
+                                            <option>R$</option>
+                                        </select>
+                                    </span>
+                                    <div class="col-sm-6 pull-right">
+                                        <input type="text" class="form-control" placeholder="R$ 0,00">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="totalVenda" class="col-sm-6">Total da Venda</label>
+                                    <div class="col-sm-6">
+                                    	<input type="text" class="form-control" disabled value="R$ 0,00">
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><span class="glyphicon glyphicon-usd"></span> Pagamento</h4>
+                	    <hr>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="pagamento">Forma de Pagamento</label>
+		                    <span class="ui-select">
+                                <select>
+                                    <option>Dinheiro</option>
+                                    <option>Cartão de Crédito</option>
+                                    <option>Boleto</option>
+                                </select>
+                            </span>
+		                </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="comissaoMl">Comissão MercadoLivre</label>
+		                    <input type="text" class="form-control" id="comissãoMl" placeholder="R$ 0,00">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="outrasDespesas">Outras Despesas</label>
+		                    <input type="text" class="form-control" id="outrasDespedas" placeholder="R$ 0,00">
+		                </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><span class="fa fa-truck"></span> Envio</h4>
+                    	<hr>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+    	                    <label for="frete">Tipo do Frete</label>
+    	                    <span class="ui-select">
+                                <select>
+                                    <option>MercadoEnvios</option>
+                                    <option>Correios</option>
+                                    <option>Transportadora</option>
+                                </select>
+                            </span>
+    	                </div>
+    	                <div class="col-md-4 col-sm-7 col-xs-12">
+    	                    <label for="cobrarCliente">Cobrar frete do Cliente?</label>
+    	                    <span class="ui-select">
+                                <select>
+                                    <option>Sim</option>
+                                    <option>Não</option>
+                                </select>
+                            </span>
+    	                </div>
+    	                <div class="col-md-4 col-sm-6 col-xs-12">
+    	                    <label for="valorFrete">Valor do Frete</label>
+    	                    <input type="text" class="form-control" data-ng-model="venda.payments.shipping_cost" id="valorFrete" placeholder="R$ 0,00">
+    	                </div>
+    	                <div class="col-md-6 col-sm-5 col-xs-12">
+    	                    <label for="codigoRastreamento">Código de Rastreamento</label>
+    	                    <input type="text" class="form-control" id="codigoRastreamento" placeholder="Digite o código de rastreamento">
+    	                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="btnProdutos">
+		            <button class="btn btn-default btn-w-md"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/vendas"> Voltar</a></button>
+		            <button class="btn btn-primary btn-w-md"
+	            			data-ng-click="add(venda)"
+	            			data-ng-disabled="">
+	            		<span class="glyphicon glyphicon-saved"></span> 
+		            	Salvar
+		            </button>
+	            </div>
+            </div>
+        </div>
+    </section> 
+
+</div>

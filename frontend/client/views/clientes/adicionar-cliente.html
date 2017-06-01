@@ -1,0 +1,94 @@
+<div class="page page-clientes">
+    <section class="panel panel-primary">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-plus"></span> Adicionar Cliente</strong></div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-6">
+                    	<h4><span class="glyphicon glyphicon-user"></span> Dados do Cliente</h4>
+                		<hr>
+                    	<div class="col-md-12 col-sm-6 col-xs-12">
+		                    <label for="produtoNome">Nome | Razão Social</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.name" id="nome" placeholder="Digite o nome ou Razão Social do Cliente">
+	                    </div>
+	                    <div class="col-md-4">
+		                    <label for="tipoDocumento">Tipo Documento</label>
+		                    <span class="ui-select">
+                                <select>
+                                    <option>CPF</option>
+                                    <option>CNPJ</option>
+                                </select>
+                            </span>
+		                </div>
+		                <div class="col-md-6 col-sm-6 col-xs-12">
+		                    <label for="numDocumento">Número do Documento</label>
+		                    <input type="text" class="form-control" name="cpf" data-ng-model="cliente.billing_info.doc_number" ng-pattern="regexCpf" id="numeroDocumento" placeholder="000.000.000-00">
+		                </div>
+		                <div class="col-md-10 col-sm-6 col-xs-12">
+		                    <label for="email">E-mail</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.email" id="email" placeholder="cliente@email.com">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="email">Telefone</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.phone.number" id="telefone1" placeholder="(xx)-xxxx-xxxx">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="email">Telefone 2</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.alternative_phone.number" id="telefone2" placeholder="(xx)-xxxx-xxxx">
+		                </div>
+                    </div>
+                    <div class="col-md-6">
+                    	<h4><span class="glyphicon glyphicon-home"></span> Endereço</h3>
+        				<hr>
+                    	<div class="col-md-9 col-sm-6 col-xs-12">
+		                    <label for="valorCusto">Endereço</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.shipping.receiver_address.address_line" id="endereco" placeholder="Digite o endereço do cliente">
+		                </div>
+                    	<div class="col-md-3 col-sm-6 col-xs-12">
+		                    <label for="valorVenda">Número</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.shipping.receiver_address.address_number" id="numero" placeholder="0">
+		                </div>
+		                <div class="col-md-5 col-sm-6 col-xs-12">
+		                    <label for="qtdDisponivel">Complemento</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.shipping.receiver_address.extra_info" id="complemento">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="largura">Bairro</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.shipping.receiver_address.neighborhood" id="bairro" placeholder="Digite o bairro">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="qtdMinima">Cidade</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.shipping.receiver_address.city.name" id="cidade" placeholder="Digite a Cidade">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="altura">Estado</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.shipping.receiver_address.state.name" id="estado" placeholder="Digite o Estado">
+		                </div>
+		                <div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="comprimento">CEP</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.shipping.receiver_address.zip_code" id="cep" placeholder="00.000-000">
+		                </div>
+                    </div>
+                    <div class="col-md-12">
+                    	<hr>
+                    	<div class="col-md-4 col-sm-6 col-xs-12">
+		                    <label for="idMercadoLivre">Outras Informações</label>
+		                    <input type="text" class="form-control" data-ng-model="cliente.other_info" id="outrasInfos">
+		                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+            	<div class="btnProdutos">
+		            <button class="btn btn-default btn-w-md"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/produtos"> Voltar</a></button>
+		            <button class="btn btn-primary btn-w-md"
+	            			data-ng-click="save(cliente)"
+	            			data-ng-disabled="!cliente.name">
+	            		<span class="glyphicon glyphicon-saved"></span> 
+		            	Salvar
+		            </button>
+	            </div>
+            </div>
+        </div>
+    </section> 
+
+</div>

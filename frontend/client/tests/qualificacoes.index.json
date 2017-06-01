@@ -1,0 +1,26 @@
+[
+  {
+    "fulfilled": true,
+    "rating": "positive",
+    "message": "Recomendamos a todos do MercadoLivre.",
+    "reason": "",
+    "restock_item": false,
+    "has_seller_refunded_money": false
+  },
+  {
+    "fulfilled": false,
+    "rating": "neutral",
+    "message": "O comprador desistiu da compra.",
+    "reason": "",
+    "restock_item": true,
+    "has_seller_refunded_money": false
+  },
+  {
+    "fulfilled": false,
+    "rating": "negative",
+    "message": "Não recomendamos.",
+    "reason": "",
+    "restock_item": true,
+    "has_seller_refunded_money": false
+  }
+]

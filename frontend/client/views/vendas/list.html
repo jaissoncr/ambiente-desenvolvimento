@@ -1,0 +1,128 @@
+<div class="page page-vendas">
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-shopping-cart"></span>  Vendas</strong></div>
+        <div class="panel-body">
+            <div class="btnVendas">
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span><a href="#/adicionar-venda"> Adicionar Venda Manual</a></button>
+                <button class="btn btn-danger" data-ng-click="remove(vendas, $index)" ng-show="isVendaSelected(vendas)"><span class="glyphicon glyphicon-trash"></span> Excluir</button>
+                <button class="btn btn-warning" data-ng-click="edit(venda)" ng-show="isVendaSelected(vendas)"><span class="glyphicon glyphicon-edit"></span><a href="#/editar-venda"> Editar</a></button>
+            </div>
+        	<div class="table-filters">
+	            <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="Busca"
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+	            <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Mostrando {{filteredRows.length}}/{{vendas.length}} resultados
+                    </span>
+                </div>
+            </div>
+        	<table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th ng-hide="!currentPageRows.length"></th>
+                    <th><div class="th">
+                        Data
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('date_created') "
+                              data-ng-class="{active: row == 'date_created'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-date_created') "
+                              data-ng-class="{active: row == '-date_created'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Produto
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('rating') "
+                              data-ng-class="{active: row == 'rating'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-rating') "
+                              data-ng-class="{active: row == '-rating'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Cliente
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('buyer.first_name') "
+                              data-ng-class="{active: row == 'buyer.first_name'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-buyer.first_name') "
+                              data-ng-class="{active: row == '-buyer.first_name'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Custo R$ 
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('sales') "
+                              data-ng-class="{active: row == 'sales'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-sales') "
+                              data-ng-class="{active: row == '-sales'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Venda R$ 
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('total_amount') "
+                              data-ng-class="{active: row == 'total_amount'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-total_amount') "
+                              data-ng-class="{active: row == '-total_amount'}"></span>
+                    </div></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="venda in currentPageRows">
+                    <td ng-hide="!currentPageRows.length"><label class="ui-checkbox"><input name="checkbox1" type="checkbox" data-ng-model="venda.selected"><span></span></label></td>
+                    <td>{{ venda.date_created | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ venda.order_items.title }}</td>
+                    <td>{{ venda.buyer.first_name + " " + venda.buyer.last_name }}</td>
+                    <td>{{ venda.valorCusto }}</td>
+                    <td>{{ venda.total_amount | currency: 'R$':2 }}</td>
+                </tr>
+                <tr ng-if="!currentPageRows.length"><td colspan="6">Nenhuma venda encontrada</td></tr>
+            </tbody>
+        </table>
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+					<form action="javascript:return;" class="form-inline">
+						<div class="form-group">Mostrar</div>
+						<div class="form-group">
+							<select class="form-control"
+								data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+	                        </select>
+						</div>
+						<div class="form-group">
+							resultados por página
+						</div>
+					</form>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredRows.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                first-text="Primeira Página"
+                                last-text="Última Página"
+								previous-text="Anterior"
+                                next-text="Próxima"
+                                boundary-links="true">
+                    </pagination>
+                </div>
+            </div>
+        </footer>
+        </div>
+        </div>
+    </section> 
+
+</div>

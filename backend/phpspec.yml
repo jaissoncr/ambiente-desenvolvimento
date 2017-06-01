@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: MLTools
+        psr4_prefix: MLTools
+        src_path: app

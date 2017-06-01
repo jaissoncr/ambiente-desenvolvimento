@@ -1,0 +1,5 @@
+[
+      {"nome": "Frete", "descricao": "Enviamos por MercadoEnvios e transportadora,", "cor": "#767676"}
+    , {"nome": "Disponibilidade", "descricao": "Temos o produto a pronta-entrega", "cor": "#000000"}
+    , {"nome": "Bancos", "descricao": "Trabalhamos com banco do Brasil e Bradesco", "cor": "#ff00ff"}
+]

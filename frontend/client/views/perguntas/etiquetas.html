@@ -1,0 +1,78 @@
+<div class="page">
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel" data-ng-class="panelColor">
+                <div class="panel-heading"><strong><span class="glyphicon" data-ng-class="panelIcon"></span> {{panelTag}}</strong></div>
+                <div class="panel-body">
+                    <div class="media" >
+                        <div class="form-group">
+                            <label for="descricao">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome" data-ng-model="etiqueta.nome" placeholder="Insira um nome para a etiqueta">
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição</label>
+                            <input type="text" class="form-control" id="descricao" data-ng-model="etiqueta.descricao" placeholder="Insira a resposta da etiqueta">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Cor da Etiqueta</label><br>
+                            <input type="color" value="#56c3ea" data-ng-model="etiqueta.cor">
+                        </div>
+                        <div class="buttonEtiquetas">
+                        	<button class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/perguntas">Voltar</a> </button>
+                            <button class="btn btn-primary"
+                                data-ng-click="save(etiqueta)"
+                                data-ng-disabled="!etiqueta.nome || !etiqueta.descricao || !etiqueta.cor">
+                                <span class="glyphicon glyphicon-saved"></span>
+                            {{buttonSaveTag}}
+                            </button>
+                            <button class="btn btn-default"
+                                data-ng-click="limpar()"
+                                data-ng-if="etiqueta">
+                                <span class="glyphicon glyphicon-remove"></span> Limpar
+                            </button>
+                        </div>
+                        <div class="callout callout-info text-left">
+                            <h4>Lista de Tags</h4>
+                            <p>
+                                #Frete (Seleciona o CEP na pergunta e calcula o frete automaticamente)<br>
+                                #CorProduto (Seleciona as cores dos produtos disponíveis)<br>
+                                #TamanhoProduto (Seleciona os tamanhos dos produtos disponíveis)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-4" ng-if="etiquetas.length > 0">
+            <div class="panel panel-warning">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-edit"></span> Editar</strong></div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Etiquetas</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="etiqueta in etiquetas">
+                            <tr ng-mouseenter="options=true" ng-mouseleave="options=false">
+                                <td><p><a href="" class="btn btn-w-md btn-default" data-ng-dblclick="edit(etiqueta)">{{etiqueta.nome}}</a></p></td>
+                                <td>
+                                    <a href="javascript:;" class="btn-icon btn-icon-sm btn-danger"
+                                    data-ng-click="remove(etiqueta, $index)"
+                                    ng-if="options"><i class="glyphicon glyphicon-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="media">
+                       <div class="callout callout-warning text-left">
+                       <h4>Como editar as etiquetas?</h4>
+                       <p>Clique duas vezes em cima da etiqueta para editar as informações.</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

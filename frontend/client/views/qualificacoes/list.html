@@ -1,0 +1,47 @@
+<div class="page">
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-star-empty"></span> Qualificações Automáticas</strong></div>
+        <div class="panel-body">
+            <div class="btnNovaRegra">
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span><a href="#/adicionar-qualificacao"> {{buttonNovaRegra}}</a></button>
+            </div>
+            <table class="responsive table table-striped">
+                <thead>
+                    <tr>
+                        <th>Qualificação</th>
+                        <th>Condições</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="qualificacao in qualificacoes">
+                        <th>
+                            <p>Status da Venda: {{ statusEntrega }}</p>
+                            <p>Você recomendaria?: {{ recomendacao }}</p>
+                        	<p>Comentário: {{ qualificacao.message }}</p>
+                        </th>
+                        <td>
+                            <div class="thumbnail">
+                            	<div class="caption">
+                                    <p><span class="glyphicon glyphicon-time"></span> {{ ratingTime }}</p>
+                                    <p><span class="glyphicon glyphicon-credit-card"></span> {{ isPaid }}</p>
+                                    <p><span class="fa fa-truck"></span> {{ isDelivered }}</p>
+                                    <p><span class="fa fa-star"></span> {{ qualificou }}</p>
+                                </div>  
+	                        </div>
+	                    </td>
+                        <td>
+                        	<p>
+                        	    <ui-qualificacao></ui-qualificacao>
+							</p>
+                        	<p>
+                        	    <a href="javascript:;" class="btn-icon btn-icon-sm btn-warning"><i class="glyphicon glyphicon-cog"></i></a>
+                        	    <a href="javascript:;" class="btn-icon btn-icon-sm btn-danger" data-ng-click="remove(qualificacao, $index)"><i class="glyphicon glyphicon-trash"></i></a>
+                        	</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>      
+        </div>
+    </section>
+</div>

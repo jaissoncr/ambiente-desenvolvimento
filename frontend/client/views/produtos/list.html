@@ -1,0 +1,125 @@
+<div class="page page-produtos">
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-tags"> </span> Produtos</strong></div>
+        <div class="panel-body">
+            <div class="btnProdutos">
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span><a href="#/adicionar-produto"> Adicionar Produto</a></button>
+                <button class="btn btn-danger" data-ng-click="remove(produtos, $index)" ng-show="isProdutoSelected(produtos)"><span class="glyphicon glyphicon-trash"></span> Excluir</button>
+                <button class="btn btn-warning" data-ng-click="edit()" ng-show="isProdutoSelected(produtos)"><span class="glyphicon glyphicon-edit"></span><a href="#/editar-produto"> Editar</a></button>
+            </div>
+            <div class="table-filters">
+	            <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="Busca"
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+	            <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Mostrando {{filteredRows.length}}/{{produtos.length}} resultados
+                    </span>
+                </div>
+            </div>
+        	<table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th ng-hide="!currentPageRows.length"></th>
+                    <th>
+                        <div class="th">
+                            Produto
+                            <span class="glyphicon glyphicon-chevron-up"
+                                  data-ng-click=" order('title') "
+                                  data-ng-class="{active: row == 'title'}"></span>
+                            <span class="glyphicon glyphicon-chevron-down"
+                                  data-ng-click=" order('-title') "
+                                  data-ng-class="{active: row == '-title'}"></span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">
+                            Quantidade Estoque
+                            <span class="glyphicon glyphicon-chevron-up"
+                                  data-ng-click=" order('available_quantity') "
+                                  data-ng-class="{active: row == 'available_quantity'}"></span>
+                            <span class="glyphicon glyphicon-chevron-down"
+                                  data-ng-click=" order('-available_quantity') "
+                                  data-ng-class="{active: row == '-available_quantity'}"></span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">
+                            Valor de Custo
+                            <span class="glyphicon glyphicon-chevron-up"
+                                  data-ng-click=" order('valorCusto') "
+                                  data-ng-class="{active: row == 'valorCusto'}"></span>
+                            <span class="glyphicon glyphicon-chevron-down"
+                                  data-ng-click=" order('-valorCusto') "
+                                  data-ng-class="{active: row == '-valorCusto'}"></span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">
+                            Valor de Venda
+                            <span class="glyphicon glyphicon-chevron-up"
+                                  data-ng-click=" order('price') "
+                                  data-ng-class="{active: row == 'price'}"></span>
+                            <span class="glyphicon glyphicon-chevron-down"
+                                  data-ng-click=" order('-price') "
+                                  data-ng-class="{active: row == '-price'}"></span>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="produto in currentPageRows">
+                    <td ng-hide="!currentPageRows.length"><label class="ui-checkbox"><input name="checkbox1" type="checkbox" data-ng-model="produto.selected"><span></span></label></td>
+                    <td>{{ produto.title }}</td>
+                    <td>{{ produto.available_quantity }}</td>
+                    <td>{{ produto.priceCusto | currency:'R$ ':2 }}</td>
+                    <td>{{ produto.price | currency:'R$ ':2 }}</td>
+                </tr>
+                <tr ng-if="!currentPageRows.length"><td colspan="5">Nenhum produto encontrado</td></tr>
+            </tbody>
+        </table>
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+						<form action="javascript:return;" class="form-inline">
+							<div class="form-group">Mostrar</div>
+							<div class="form-group">
+								<select class="form-control"
+										data-ng-model="numPerPage"
+		                                data-ng-options="num for num in numPerPageOpt"
+		                                data-ng-change="onNumPerPageChange()">
+		                        </select>
+							</div>
+							<div class="form-group">
+								resultados por página
+							</div>
+						</form>
+	                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredRows.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                first-text="Primeira Página"
+                                last-text="Última Página"
+								previous-text="Anterior"
+                                next-text="Próxima"
+                                boundary-links="true">
+                    </pagination>
+                </div>
+            </div>
+        </footer>
+        </div>
+        </div>
+    </section> 
+
+</div>

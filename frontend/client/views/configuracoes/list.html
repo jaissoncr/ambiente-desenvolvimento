@@ -1,0 +1,54 @@
+<div class="page page-configuracoes">
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-cog"></span> Configurações Gerais</strong></div>
+            <div class="panel-body">
+                <div class="form-group">
+                	<h4><span class="glyphicon glyphicon-envelope"></span> Recebimento de e-mails</h4>
+                	<hr>
+                	<h4>Quero receber e-mails quando:</h4>
+                    <div class="row">
+                    	<div class="col-sm-12">
+                    		<label class="ui-checkbox"><input name="checkbox1" type="checkbox"><span>Quando receber uma pergunta</span></label>
+                    	</div>
+                    	<div class="col-sm-12">
+                    		<label class="ui-checkbox"><input name="checkbox1" type="checkbox"><span>Quando realizar uma venda</span></label>
+                    	</div>
+                    	<div class="col-sm-12">
+                    		<label class="ui-checkbox"><input name="checkbox1" type="checkbox"><span>Quando receber uma qualificação positiva</span></label>
+                    	</div>
+                    	<div class="col-sm-12">
+                    		<label class="ui-checkbox"><input name="checkbox1" type="checkbox"><span>Quando receber uma qualificação neutra/negativa</span></label>
+                    	</div>
+                    </div>
+                    <h4><span class="fa fa-envelope-o"></span> E-mails</h4>
+                	<hr>
+                	<div class="row">
+                		<div class="col-md-4 col-sm-12 col-xs-12">
+		                    <label for="emailGeral">E-mail para receber o resumo diário de notificações e novidades</label>
+		                    <input type="text" class="form-control" id="emailGeral" placeholder="Digite o endereço de e-mail">
+		                </div>
+		            </div>
+		            <div class="divider"></div>
+		            <div class="row">
+		                <div class="col-md-4 col-sm-12 col-xs-12">
+		                    <label for="emailPagamento">E-mail para receber cupons de pagamento</label>
+		                    <input type="text" class="form-control" id="emailPagamento" placeholder="Digite o endereço de e-mail">
+		                </div>
+                	</div>
+                </div>
+            </div>
+            <div class="panel-footer">
+            	<div class="btnProdutos">
+		            <button class="btn btn-default btn-w-md"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/produtos"> Voltar</a></button>
+		            <button class="btn btn-primary btn-w-md"
+	            			data-ng-click="add(produto)"
+	            			data-ng-disabled="!produto.title || !produto.valorCusto || !produto.price || !produto.available_quantity">
+	            		<span class="glyphicon glyphicon-saved"></span> 
+		            	Salvar
+		            </button>
+	            </div>
+            </div>
+        </div>
+    </section> 
+
+</div>

@@ -1,0 +1,86 @@
+<div class="page page-emails">
+    <section class="panel panel-primary">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-plus"></span> Adicionar regra de e-mail</strong></div>
+        <div class="panel-body">
+    		<h4>Condições</h4>
+        	<hr>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <label for="recebimento">Status do Pagamento</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>Recebido</option>
+                            <option>Cancelado/Devolvido</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <label for="recebimento">Status da Entrega</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>Em Trânsito</option>
+                            <option>Entregue</option>
+                            <option>Cancelado/Devolvido</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <label for="recebimento">Qualificou como</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>Não se aplica</option>
+                            <option>Positivo</option>
+                            <option>Neutro</option>
+                            <option>Negativo</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <label for="recebimento">Foi qualificado como</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>Não se aplica</option>
+                            <option>Positivo</option>
+                            <option>Neutro</option>
+                            <option>Negativo</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <label for="tituloEmail">Título do E-mail</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-md-9 col-sm-8">
+                    <label for="conteudoEmail">Conteúdo</label>
+                    <div text-angular ng-model="mailContent" class="ui-editor"></div>
+                    <button class="btn btn-info btn-w-md pull-right"><span class="glyphicon glyphicon-search"></span> Visualizar e-mail</button>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <label for="">Tags</label>
+                    <div class="well well-lg">
+                        <p><a href="#">$nomeProduto</a></p>
+                        <p><a href="#">$nomeComprador</a></p>
+                        <p><a href="#">$codigoProduto</a></p>
+                        <p><a href="#">$numeroVenda</a></p>
+                        <p><a href="#">$codigoRastreio</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="btnProdutos">
+                <button class="btn btn-default btn-w-md"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/produtos"> Voltar</a></button>
+                <button class="btn btn-primary btn-w-md"
+            			data-ng-click="add(email)"
+            			data-ng-disabled="">
+            		<span class="glyphicon glyphicon-saved"></span> 
+                	Salvar
+                </button>
+            </div>
+        </div> 	
+    </section> 
+</div>

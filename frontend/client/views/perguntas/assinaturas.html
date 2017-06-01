@@ -1,0 +1,41 @@
+<div class="page page-signature">
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-pencil"></span> Assinaturas</strong></div>
+        <div class="panel-body" ng-repeat="assinatura in assinaturas track by $index">
+            <div class="form-group col-md-12">
+                <div class="signature-list">
+                    <span class="view">
+                        <label for="">Insira um cumprimento/saudação</label>
+                        <input type="text" class="form-control" id="saudacao" data-ng-model="assinatura.saudacao" placeholder="Exemplo: #BomDiaTardeNoite, #ApelidoComprador,">
+                        <span class="glyphicon glyphicon-remove" data-ng-click="removeSaudacao(assinatura)"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="callout callout-info col-md-12">
+                <p>- A Saudação será inserida automaticamente no início da resposta.</p>
+                <p>- O "#BomDiaTardeNoite" buscará automaticamente qual a saudação no momento. Se preferir, simplesmente use "Oi" ou "Olá."</p>
+                <p>- O "#ApelidoComprador" buscará automaticamente o apelido do comprador.</p>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="signature-list">
+                    <span class="view">
+                        <label for="">Insira uma assinatura de despedida</label>
+                        <input type="text" class="form-control" id="despedida" data-ng-model="assinatura.despedida" placeholder="Exemplo: Atenciosamente, #MeuApelido.">
+                        <span class="glyphicon glyphicon-remove" data-ng-click="removeDespedida(assinatura)"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="callout callout-info col-md-12">
+                <p>- A Assinatura será inserida automaticamente no final da resposta.</p>
+                <p>- O "#MeuApelido" buscará automaticamente o seu apelido no MercadoLivre.</p>
+            </div>
+            <div class="signature-button col-md-12">
+                <button class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span><a href="#/perguntas"> Voltar</a></button>
+                <button class="btn btn-primary"  
+                    data-ng-click="add(assinatura, $index)">
+                    <span class="glyphicon glyphicon-saved"></span> 
+                    {{ buttonSaveAssinaturas}}
+                </button>
+            </div>
+        </div>
+</div>

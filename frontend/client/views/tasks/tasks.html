@@ -1,0 +1,105 @@
+<div class="page page-tasks">
+    <div class="row">
+        <div class="col-md-12">
+            <section class="task-container" data-ng-controller="taskCtrl">
+
+                <form data-ng-submit="add()" class="add-task">
+                    <input type="text"
+                           placeholder="O que precisa ser feito?"
+                           class="form-control"
+                           data-ng-model="newTask"
+                           data-ng-disabled="newTaskSending"
+                           autofocus>
+                    <a type="submit" class="submit-button" data-ng-click="add()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </form>
+
+                <section>
+                    <ul class="filters list-inline nav nav-tabs">
+                        <li data-ng-class="{active: statusFilter == ''}">
+                            <a href=""
+                               data-toggle="tab"
+                               data-ng-click="filter('all')"
+                               >Todas</a>
+                        </li>
+                        <li data-ng-class="{active: statusFilter.completed == false }">
+                            <a href=""
+                               data-toggle="tab"
+                               data-ng-click="filter('active')"
+                               >Ativas</a>
+                        </li>
+                        <li data-ng-class="{active: statusFilter.completed == true }">
+                            <a href=""
+                               data-toggle="tab"
+                               data-ng-click="filter('completed')"
+                               >Concluídas</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section  data-ng-cloak>
+                    <ul class="task-list list-unstyled">
+                        <li data-ng-repeat="task in tasks | filter:statusFilter track by $index"
+                            data-ng-class="{completed: task.completed, editing: task == editedTask}">
+                            <span class="view">
+                                <input type="checkbox"
+                                       class="toggle-task"
+                                       data-ng-model="task.completed"
+                                       data-ng-change="completed(task)">
+                                <label data-ng-dblclick="edit(task)">{{task.title}}</label>
+                                <span class="glyphicon glyphicon-pencil"
+                                      data-ng-click="edit(task)"></span>
+                                <span class="glyphicon glyphicon-remove"
+                                      data-ng-click="remove(task, $index)"
+                                      ></span>
+                            </span>
+                            <form data-ng-submit="doneEditing(task, $index)">
+                                <input type="text"
+                                       class="edit form-control"
+                                       data-ng-trim="false"
+                                       data-ng-model="task.title"
+                                       data-ng-blur="triggerSubmit($event)"
+                                       data-task-focus="task == editedTask">
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+
+                <footer class="task-footer">
+                    <ul class="list-inline clearfix">
+                        <li class="first-item">
+                            <input type="checkbox"
+                                   id="toggle-all"
+                                   data-ng-model="allChecked"
+                                   data-ng-change="markAll(allChecked)"
+                                   data-ng-disabled="remainingCount == 0">
+                            <label for="toggle-all">Marcar todas como concluídas</label>
+                        </li>
+                        <li class="text-center">
+                            <span>
+                                <strong>{{remainingCount}}</strong>
+                                <span class="text-muted"
+                                      data-ng-pluralize count="remainingCount"
+                                      when="{one: 'tarefa restante', other: 'tarefas restantes'}"></span>
+                            </span>
+                        </li>
+                        <li class="text-right">
+                            <span class="clear-completed"
+                                  data-ng-click="clearCompleted()"
+                                  data-ng-show="remainingCount < tasks.length">Excluir tarefas concluídas ({{tasks.length - remainingCount}})</span>
+                        </li>
+                    </ul>
+                </footer>
+
+            </section>
+        </div>
+    </div>
+
+    <div class="callout callout-info">
+        <p>Ajuda:</p>
+        <p> - Com dois cliques ou clicando no <span class="glyphicon glyphicon-pencil"></span> exibido ao lado de cada tarefa você consegue editar uma tarefa.</p>
+        <p> - Você pode informar uma nova tarefa no campo exibido no topo da página. Para cadastrar basta informar e teclar "Enter".</p>
+        <p> - Para remover basta clicar no <span class="glyphicon glyphicon-remove"></span> exibido ao lado de cada tarefa.</p>
+    </div>
+</div>
